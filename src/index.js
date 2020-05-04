@@ -11,5 +11,5 @@ import App from './App2';
 //   const programName = await app();
 //   header.textContent = programName;
 // };
-render(<App />, document.getElementById('root'));
 // document.addEventListener('DOMContentLoaded', startApp);
+render(<App />, document.getElementById('root'));
