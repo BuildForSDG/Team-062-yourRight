@@ -19,7 +19,6 @@ module.exports = {
     semi: 1,
     'comma-dangle': ['error', 'never'],
     'no-param-reassign': ['error', { props: false }],
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'prettier/prettier': [
       'error',
       {
