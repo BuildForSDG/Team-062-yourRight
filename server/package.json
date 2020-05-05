@@ -1,11 +1,8 @@
 {
-  "name": "yourRight",
+  "name": "yourright",
   "version": "0.0.1",
   "description": "Build for SDG team project",
-  "keywords": [
-    "Facebook Dev Circles",
-    "#BuildForSDG"
-  ],
+  "keywords": ["Facebook Dev Circles", "#BuildForSDG"],
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -43,7 +40,5 @@
     "jest": "^25.4.0",
     "parcel-bundler": "^1.12.4"
   },
-  "browserslist": [
-    "last 1 Chrome versions"
-  ]
+  "browserslist": ["last 1 Chrome versions"]
 }
