@@ -2,7 +2,6 @@
   "name": "yourright",
   "version": "0.0.1",
   "description": "Build for SDG team project",
-  "keywords": ["Facebook Dev Circles", "#BuildForSDG"],
   "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -39,6 +38,5 @@
     "eslint-plugin-import": "^2.20.2",
     "jest": "^25.4.0",
     "parcel-bundler": "^1.12.4"
-  },
-  "browserslist": ["last 1 Chrome versions"]
+  }
 }
