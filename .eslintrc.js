@@ -5,42 +5,27 @@ module.exports = {
     node: true,
     jest: true
   },
-  extends: [
-    'airbnb-base',
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:import/recommended'
-  ],
+  extends: ['react-app', 'airbnb-base', 'plugin:jsx-a11y/recommended', 'prettier', 'prettier/react'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module'
   },
-  parser: "babel-eslint",
-  plugins: [
-    'react-hooks',
-    'import'
-  ],
+  plugins: ['prettier'],
   rules: {
+    semi: 1,
     'comma-dangle': ['error', 'never'],
     'no-param-reassign': ['error', { props: false }],
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'react/jsx-filename-extension': [1, { "extensions": ['.js', '.jsx'] }],
-    'import/extensions': 0,
-  },
-  settings: {
-    react: {
-      version: 'detect'
-    },
-    'import/resolver': {
-      'node': {
-        "extensions": ['.js', '.jsx']
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'prettier/prettier': [
+      'error',
+      {
+        semi: true,
+        singleQuote: true
       }
-    }
+    ]
   }
 };

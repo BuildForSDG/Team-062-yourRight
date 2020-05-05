@@ -1,3 +1,10 @@
-const app = async () => '#BuildforSDG';
+import React from 'react';
 
-export default app;
+const App = () => {
+  return (
+    <div className="App">
+      <h1>Gender Equality</h1>
+    </div>
+  );
+};
+export default App;
