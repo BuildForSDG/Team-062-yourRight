@@ -1,5 +1,5 @@
 {
-  "name": "Team-062-yourRight",
+  "name": "team-062-yourright",
   "version": "1.0.0",
   "description": "barebones setup for JavaScript / Node projects replace this with a one-liner phrase describing this project or app",
   "main": "index.js",
@@ -7,10 +7,12 @@
     "doc": "docs"
   },
   "scripts": {
+    "start-app-dev": "concurrently 'cd server && npm run dev && cd ..' 'cd client && npm start && cd ..'",
     "install-packages": "cd server && npm install && cd .. && cd client && npm install && cd ..",
     "test": "cd server && npm test && cd .. && cd client && npm test && cd ..",
     "build": "cd client && npm run build && cd .. && cd server && npm run build && cd ..",
-    "coverage": "cd server && npm run coverage && cd .. && cd client && npm run coverage && cd .."
+    "coverage": "cd server && npm run coverage && cd .. && cd client && npm run coverage && cd ..",
+    "start": "cd server && npm start"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/BuildForSDG/Team-062-yourRight/issues"
   },
-  "homepage": "https://github.com/BuildForSDG/Team-062-yourRight#readme"
+  "homepage": "https://github.com/BuildForSDG/Team-062-yourRight#readme",
+  "devDependencies": {
+    "concurrently": ""
+  }
 }

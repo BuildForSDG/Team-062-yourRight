@@ -39,7 +39,7 @@ const normalizePort = (val) => {
   return false;
 };
 
-const terminate = (server, options = { coredump: false, timeout: 500 }) => {
+const terminate = (serverApp, options = { coredump: false, timeout: 500 }) => {
   // Exit function
   const exit = (code) => {
     options.coredump ? process.abort() : process.exit(code);
@@ -52,7 +52,7 @@ const terminate = (server, options = { coredump: false, timeout: 500 }) => {
     }
 
     // Attempt a graceful shutdown
-    server.close(exit);
+    serverApp.close(exit);
     setTimeout(exit, options.timeout).unref();
   };
 };
