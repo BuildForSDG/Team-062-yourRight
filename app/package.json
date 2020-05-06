@@ -1,7 +1,55 @@
 {
   "name": "yourright",
   "version": "0.1.0",
+  "description": "Building solutions for gender equalities",
+  "keywords": [
+    "js-starter",
+    "boilerplate"
+  ],
   "private": true,
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "directories": {
+    "test": "__tests__"
+  },
+  "scripts": {
+    "start-react": "react-scripts start",
+    "build-react": "react-scripts build",
+    "test-react": "react-scripts test",
+    "eject-react": "react-scripts eject",
+    "lint": "eslint \"src/**/*.js\" \"src/**/*.jsx\"",
+    "lint:server": "eslint \"app/source/**/*.js\"",
+    "lint:fix": "eslint --fix \"src/**/*.js\" \"src/**/*.jsx\"",
+    "dev-server-client": "concurrently 'npm run dev' 'npm run start-react'",
+    "start-dev": "nodemon --exec babel-node source/bin/www.js",
+    "dev": "DEBUG=yourright:* npm run start-dev",
+    "release": "npm run clean && npm run build-app && npm run start",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "npm run clean && npm run build-app",
+    "build-app": "babel source -s -d dist --presets=@babel/env",
+    "start": "node dist/www",
+    "coveralls": "",
+    "codeClimate": "",
+    "test-server": "NODE_ENV=test jest tests/run.test.js --watchAll=false --detectOpenHandles",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "pretest-server": "NODE_ENV=test npm run migrate:undo && NODE_ENV=test npm run migrate && NODE_ENV=test npm run seed",
+    "seed": "npx sequelize-cli db:seed:all",
+    "seed:undo": "npx sequelize-cli db:seed:undo"
+  },
+  "author": {
+    "name":"BVuild for SDG",
+    "email": "buildforsdg@andela.com"
+  },
+  "homepage": "https://github.com/BuildForSDG/Team-062-yourRight#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BuildForSDG/Team-062-yourRight.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BuildForSDG/Team-062-yourRight#issues"
+  },
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -26,30 +74,6 @@
     "swagger-jsdoc": "",
     "swagger-ui-express": "",
     "validator": ""
-  },
-  "scripts": {
-    "start-react": "react-scripts start",
-    "build-react": "react-scripts build",
-    "test-react": "react-scripts test",
-    "eject-react": "react-scripts eject",
-    "lint": "eslint \"src/**/*.js\" \"src/**/*.jsx\"",
-    "lint:fix": "eslint --fix \"src/**/*.js\" \"src/**/*.jsx\"",
-    "dev-server-client": "concurrently 'npm run dev' 'npm run start-react'",
-    "start-dev": "nodemon --exec babel-node source/bin/www.js",
-    "dev": "DEBUG=yourright:* npm run start-dev",
-    "release": "npm run clean && npm run build-app && npm run start",
-    "clean": "rm -rf dist && mkdir dist",
-    "build": "npm run clean && npm run build-app",
-    "build-app": "babel source -s -d dist --presets=@babel/env",
-    "start": "node dist/www",
-    "coveralls": "",
-    "codeClimate": "",
-    "test-server": "NODE_ENV=test jest tests/run.test.js --watchAll=false --detectOpenHandles",
-    "migrate": "npx sequelize-cli db:migrate",
-    "migrate:undo": "npx sequelize-cli db:migrate:undo",
-    "pretest-server": "NODE_ENV=test npm run migrate:undo && NODE_ENV=test npm run migrate && NODE_ENV=test npm run seed",
-    "seed": "npx sequelize-cli db:seed:all",
-    "seed:undo": "npx sequelize-cli db:seed:undo"
   },
   "eslintConfig": {
     "extends": "react-app"
