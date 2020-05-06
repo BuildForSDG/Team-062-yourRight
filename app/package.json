@@ -1,63 +1,17 @@
 {
-  "name": "yourright",
-  "version": "0.1.0",
-  "description": "Building solutions for gender equalities",
-  "keywords": [
-    "js-starter",
-    "boilerplate"
-  ],
-  "private": true,
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
-  "directories": {
-    "test": "__tests__"
-  },
-  "scripts": {
-    "start-react": "react-scripts start",
-    "build-react": "react-scripts build",
-    "test-react": "react-scripts test",
-    "eject-react": "react-scripts eject",
-    "lint": "eslint \"src/**/*.js\" \"src/**/*.jsx\"",
-    "lint:server": "eslint \"app/source/**/*.js\"",
-    "lint:fix": "eslint --fix \"src/**/*.js\" \"src/**/*.jsx\"",
-    "dev-server-client": "concurrently 'npm run dev' 'npm run start-react'",
-    "start-dev": "nodemon --exec babel-node source/bin/www.js",
-    "dev": "DEBUG=yourright:* npm run start-dev",
-    "release": "npm run clean && npm run build-app && npm run start",
-    "clean": "rm -rf dist && mkdir dist",
-    "build": "npm run clean && npm run build-app",
-    "build-app": "babel source -s -d dist --presets=@babel/env",
-    "start": "node dist/www",
-    "coveralls": "",
-    "codeClimate": "",
-    "test-server": "NODE_ENV=test jest tests/run.test.js --watchAll=false --detectOpenHandles",
-    "migrate": "npx sequelize-cli db:migrate",
-    "migrate:undo": "npx sequelize-cli db:migrate:undo",
-    "pretest-server": "NODE_ENV=test npm run migrate:undo && NODE_ENV=test npm run migrate && NODE_ENV=test npm run seed",
-    "seed": "npx sequelize-cli db:seed:all",
-    "seed:undo": "npx sequelize-cli db:seed:undo"
-  },
   "author": {
-    "name":"BVuild for SDG",
-    "email": "buildforsdg@andela.com"
+    "email": "buildforsdg@andela.com",
+    "name": "Build for SDG"
   },
-  "homepage": "https://github.com/BuildForSDG/Team-062-yourRight#readme",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BuildForSDG/Team-062-yourRight.git"
-  },
+  "browserslist": "last 1 Chrome versions",
   "bugs": {
     "url": "https://github.com/BuildForSDG/Team-062-yourRight#issues"
   },
-  "license": "MIT",
   "dependencies": {
+    "@hapi/joi": "",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "@hapi/joi": "",
     "bcryptjs": "",
     "cookie-parser": "^1.4.5",
     "core-js": "",
@@ -69,15 +23,16 @@
     "morgan": "^1.10.0",
     "pg": "",
     "pg-hstore": "",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
     "regenerator-runtime": "",
     "sequelize": "",
     "swagger-jsdoc": "",
     "swagger-ui-express": "",
     "validator": ""
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
+  "description": "Building solutions for gender equalities",
   "devDependencies": {
     "@babel/cli": "",
     "@babel/core": "",
@@ -99,6 +54,51 @@
     "superagent": "^5.2.2",
     "supertest": "^4.0.2"
   },
-  "browserslist": "last 1 Chrome versions",
-  "proxy": "http://localhost:5000/"
+  "directories": {
+    "test": "__tests__"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "homepage": "https://github.com/BuildForSDG/Team-062-yourRight#readme",
+  "keywords": [
+    "js-starter",
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "main": "build/index.js",
+  "name": "yourright",
+  "private": true,
+  "proxy": "http://localhost:5000/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BuildForSDG/Team-062-yourRight.git"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run build-app",
+    "build-app": "babel source -s -d dist --presets=@babel/env",
+    "build-react": "react-scripts build",
+    "clean": "rm -rf dist && mkdir dist",
+    "codeClimate": "",
+    "coveralls": "",
+    "dev": "DEBUG=yourright:* npm run start-dev",
+    "dev-server-client": "concurrently 'npm run dev' 'npm run start-react'",
+    "eject-react": "react-scripts eject",
+    "lint": "eslint \"src/**/*.js\" \"src/**/*.jsx\"",
+    "lint:fix": "eslint --fix \"src/**/*.js\" \"src/**/*.jsx\"",
+    "lint:server": "eslint \"app/source/**/*.js\"",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "pretest-server": "NODE_ENV=test npm run migrate:undo && NODE_ENV=test npm run migrate && NODE_ENV=test npm run seed",
+    "release": "npm run clean && npm run build-app && npm run start",
+    "seed": "npx sequelize-cli db:seed:all",
+    "seed:undo": "npx sequelize-cli db:seed:undo",
+    "start": "node dist/www",
+    "start-dev": "nodemon --exec babel-node source/bin/www.js",
+    "start-react": "react-scripts start",
+    "test-react": "react-scripts test",
+    "test-server": "NODE_ENV=test jest tests/run.test.js --watchAll=false --detectOpenHandles"
+  },
+  "types": "build/index.d.ts",
+  "version": "0.1.0"
 }
