@@ -42,13 +42,15 @@ const normalizePort = (val) => {
 const terminate = (serverApp, options = { coredump: false, timeout: 500 }) => {
   // Exit function
   const exit = (code) => {
-    options.coredump ? process.abort() : process.exit(code);
+    if (options.coredump) return process.abort();
+    return process.exit(code);
   };
 
+  // eslint-disable-next-line no-unused-vars
   return (code, reason) => (err, promise) => {
     if (err && err instanceof Error) {
       // Log error information, use a proper logging library here :)
-      console.log(err.message, err.stack);
+      error(err.message, err.stack);
     }
 
     // Attempt a graceful shutdown
