@@ -1,11 +1,88 @@
 {
-  "name": "yourright",
-  "version": "1.0.0",
-  "description": "",
-  "main": "jest.config.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "js-starter",
+  "version": "0.0.1",
+  "description": "A boilerplate for starting js code",
+  "keywords": ["js-starter", "boilerplate"],
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "test": "tests"
   },
-  "author": "",
-  "license": "ISC"
+  "scripts": {
+    "test:watch": "jest --watch",
+    "test:cover": "jest --coverage",
+    "lint": "eslint \"src/**/*.js\"",
+    "dev-server-client": "concurrently 'npm run dev' 'cd .. && cd client && npm start'",
+    "start-dev": "nodemon --exec babel-node src/bin/www.js",
+    "dev": "DEBUG=js-starter:* npm run start-dev",
+    "release": "npm run clean && npm run build-app && npm run start",
+    "clean": "rm -rf dist && mkdir dist",
+    "build": "npm run clean && npm run build-app",
+    "build-app": "babel src -s -d dist --presets=@babel/env",
+    "start": "node dist/www.js",
+    "coveralls": "",
+    "codeClimate": "",
+    "test-client": "cd .. && cd client && npm test && cd ..",
+    "test": "NODE_ENV=test jest tests/run.test.js --watchAll=false --detectOpenHandles",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "pretest-server": "NODE_ENV=test npm run migrate:undo && NODE_ENV=test npm run migrate && NODE_ENV=test npm run seed",
+    "seed": "npx sequelize-cli db:seed:all",
+    "seed:undo": "npx sequelize-cli db:seed:undo"
+  },
+  "author": {
+    "name": "Build For SDG",
+    "email": "buildforsdg@andela.com"
+  },
+  "homepage": "https://github.com/BuildForSDG/js-starter#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BuildForSDG/js-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BuildForSDG/js-starter/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/joi": "",
+    "bcryptjs": "",
+    "cookie-parser": "^1.4.5",
+    "core-js": "",
+    "cors": "",
+    "debug": "^4.1.1",
+    "dotenv": "",
+    "express": "",
+    "jsonwebtoken": "",
+    "morgan": "^1.10.0",
+    "pg": "",
+    "pg-hstore": "",
+    "regenerator-runtime": "",
+    "sequelize": "",
+    "swagger-jsdoc": "",
+    "swagger-ui-express": "",
+    "validator": ""
+  },
+  "devDependencies": {
+    "@babel/cli": "",
+    "@babel/core": "",
+    "@babel/node": "",
+    "@babel/preset-env": "",
+    "@babel/register": "",
+    "babel-jest": "^25.5.1",
+    "babel-register": "^6.26.0",
+    "concurrently": "",
+    "coveralls": "",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.4.0",
+    "jest-chain": "^1.1.5",
+    "jest-extended": "^0.11.5",
+    "nodemon": "",
+    "nyc": "",
+    "sequelize-cli": "",
+    "superagent": "^5.2.2",
+    "supertest": "^4.0.2"
+  }
 }
