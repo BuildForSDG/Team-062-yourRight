@@ -1,14 +1,16 @@
 import React from 'react';
-import { render } from 'react-dom';
-// import app from './app';
-import App from './Main';
+import ReactDOM from 'react-dom';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-// const startApp = async () => {
-//   const header = document.querySelector('[data-app-name]');
-//   if (!header) return;
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-//   const programName = await app();
-//   header.textContent = programName;
-// };
-// document.addEventListener('DOMContentLoaded', startApp);
-render(<App />, document.getElementById('root'));
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

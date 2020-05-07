@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     jest: true
   },
-  extends: ['react-app', 'airbnb-base', 'plugin:jsx-a11y/recommended', 'prettier', 'prettier/react'],
+  // extends: ['react-app', 'airbnb-base', 'plugin:jsx-a11y/recommended', 'prettier', 'prettier/react'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
@@ -17,8 +17,8 @@ module.exports = {
   plugins: ['prettier'],
   rules: {
     semi: 1,
-    'comma-dangle': ['error', 'never'],
-    'no-param-reassign': ['error', { props: false }],
+    // 'comma-dangle': ['error', 'never'],
+    // 'no-param-reassign': ['error', { props: false }],
     'prettier/prettier': [
       'error',
       {
