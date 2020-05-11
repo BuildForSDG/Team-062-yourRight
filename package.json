@@ -1,23 +1,11 @@
 {
-  "name": "Build-for-SDG",
+  "name": "react-app",
   "version": "0.1.0",
   "private": true,
   "description": "Building solutions for gender equalities",
   "author": {
     "email": "buildforsdg@andela.com",
-    "name": "BVuild for SDG"
-  },
-  "homepage": "https://github.com/BuildForSDG/Team-062-yourRight#readme",
-  "keywords": [
-    "js-starter",
-    "boilerplate"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BuildForSDG/Team-062-yourRight.git"
-  },
-  "bugs": {
-    "url": "https://github.com/BuildForSDG/Team-062-yourRight#issues"
+    "name": "Build for SDG"
   },
   "license": "MIT",
   "dependencies": {
@@ -59,5 +47,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3"
   }
 }
