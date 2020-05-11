@@ -1,29 +1,34 @@
-barebones setup for JavaScript / Node projects replace this with a one-liner phrase describing this project or app
+[YourRight](http://localhost:3000) is a platform that promotes the rights of women and girls globally .
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/11694da5138a465d8833b2f72e81df75)](https://app.codacy.com/gh/BuildForSDG/Team-062-yourRight?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/Team-062-yourRight&utm_campaign=Badge_Grade_Settings)
-[![Codacy Badge](https://img.shields.io/badge/Code%20Quality-D-red)](https://img.shields.io/badge/Code%20Quality-D-red)
 
 ## About
 
-What is this project about. Ok to enrich here or the section above it with an image.
+This Sustainable Development Goal(SDG) is aimed to help reduce all harmful practices violating the rights of women and girls globally scuh as Child marriage and female genital mutilation.By reporting any suspected cases[YourRight](http://localhost:3000)
 
-Once this repo has been setup on Codacy by the TTL, replace the above badge with the actual one from the Codacy dashboard, and add the code coverage badge as well. This is mandatory
+## Why
 
-This is a simple JavaScript starter repo template for setting up your project. The setup contains
+We are taking up the goal becuase according to [unicef](https://www.unicef.org/) research over the years it was said that harmful cultural practices, such as child marriage and female genital mutilation (FGM), are discriminatory practices committed regularly over such long periods of time that communities and societies begin to consider them acceptable. [More Details](https://www.unicef.org/protection/harmful-practices).
+
+## Goal
+
+Our goal is to ensure that through this platform every child is protected from violence such as genital mutilation and forced marriges in both humanitarian and development settings.
+
+1. To develop a platform where reported cases will be human right bodie.
+2. Develop and support implementation of appropriate laws and policies.
+3. Increase global knowledge of the problem and political commitment to end child marriage and FGM.
+
+## Usage
+
+- As an Case Reporter: You can partake in this platform by opening an account with us login and report a case
+
+- As a partnering Organization: You hav to register indicating your interest to support this goal and you become either a sponsor or legal practitioner who takes up reported cases into action.
+
+## Setup
 
 - Jest: For runnung tests. We strongly recommend that JavaScript projects use Jest
 
 - Eslint & Prettier: For formatting code to match ESlint AirBnB coding standard. You might need to install the ESlint and Prettier plugins for your code editor to make the most of these utilities
-
-## Why
-
-Talk about what problem this solves, what SDG(s) and SGD targets it addresses and why these are imoirtant
-
-## Usage
-
-How would someone use what you have built, include URLs to the deployed app, service e.t.c when you have it setup
-
-## Setup
 
 Install `npm` or `yarn` if you dont have any of them already installed. We recommend Yarn though.
 
