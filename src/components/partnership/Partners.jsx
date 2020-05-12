@@ -8,6 +8,7 @@ import { CustomButtons } from '../utils/CustomButtons';
 const Partners = () => {
   return (
     <div className="partners">
+      <h3>Our Patners</h3>
       <Carousel arrows={false} customButtonGroup={<CustomButtons />} responsive={responsive}>
         <div>
           <img src={slideImage} alt="partners" />
