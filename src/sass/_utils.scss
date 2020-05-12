@@ -1,0 +1,47 @@
+@import "./variables";
+
+* {
+  a {
+    text-decoration: none;
+  }
+}
+ul li {
+  list-style: none;
+}
+.custom-arrow {
+  position: absolute;
+  top: 0rem;
+  right: 0;
+  margin: 1rem 3rem;
+}
+
+.slide-btn {
+  background: transparent;
+  outline: none;
+  border: 2px solid $light;
+  padding: 0.5rem 0.7rem;
+  color: $light;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.slide-btn:hover {
+  border-color: $primary;
+  color: $primary;
+}
+
+.line {
+  width: 3rem;
+  background-color: $primary;
+  height: 0.3rem;
+  margin: 0.4rem auto;
+  border-radius: 0.4rem;
+}
+
+.border-line {
+  height: 0.2rem;
+  width: 80%;
+  background: $primary;
+  margin: 1.3rem auto;
+  border-radius: 0.5rem;
+}
