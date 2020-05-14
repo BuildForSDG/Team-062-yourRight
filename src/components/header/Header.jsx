@@ -4,10 +4,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import SideNav from './sideMenu/SideMenu';
 import Logo from './logo/Logo';
-
 import Navbar from './navbar/Navbar';
 
 const useStyles = makeStyles((theme) => ({
@@ -64,4 +62,5 @@ const Header = () => {
     </div>
   );
 };
+
 export default Header;

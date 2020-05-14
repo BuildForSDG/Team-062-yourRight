@@ -1,0 +1,34 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+.about {
+  text-align: center;
+  background: $light;
+  h3,
+  p {
+    margin: 0.5rem;
+    padding: 0.3rem;
+  }
+  &-items {
+    margin: 1.6rem 0.5rem;
+    a {
+      display: block;
+      color: #3f51b5;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .about {
+    @include centerItems;
+    &-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      & > div {
+        margin: 1rem 3rem;
+      }
+    }
+  }
+}

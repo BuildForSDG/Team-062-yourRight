@@ -7,6 +7,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import logo from '../../images/justlogo.svg';
+import './ContactInfo.scss';
 
 const ContactInfo = () => {
   return (
@@ -15,8 +16,8 @@ const ContactInfo = () => {
         <div className="description">
           <img src={logo} height="100" alt="your right fight" />
           <p>
-            Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A
-            Galley Of Type And Scrambled It To Make A Type.
+            YourRight's works is basically to save children's lives and to defend their rights from early childhood
+            through adolescence. This is what we our goal .
           </p>
         </div>
         <div className="contact-services">
@@ -42,28 +43,28 @@ const ContactInfo = () => {
           <div className="line"> </div>
           <ul>
             <li>
-              {' '}
-              <LocationOnIcon /> demo address #8901 Marmora Road Chi Minh City, Vietnam
+              <LocationOnIcon />
+              facebook.com/buildforsdg
             </li>
             <li>
               <PhoneIphoneIcon />
-              0800-123456 (24/7 Support Line)
+              0000000
             </li>
             <li>
               <MailOutlineIcon /> buildforSGG@andela.com
             </li>
           </ul>
           <div className="contact-address-socials">
-            <a href="wlkww.com">
+            <a href="https://facebook.com/buildforsdg.com">
               <FacebookIcon fontSize="small" />
             </a>
-            <a href="wlkww.com">
+            <a href="https://facebook.com/buildforsdg.com">
               <LinkedInIcon fontSize="small" />
             </a>
-            <a href="wlkww.com">
+            <a href="https://facebook.com/buildforsdg.com">
               <InstagramIcon fontSize="small" />
             </a>
-            <a href="wlkww.com">
+            <a href="https://facebook.com/buildforsdg.com">
               <TwitterIcon fontSize="small" />
             </a>
           </div>

@@ -19,4 +19,3 @@ export const CustomButtons = ({ next, previous, goToSlide, ...rest }) => {
   );
 };
 
-// export default CustomArrows;

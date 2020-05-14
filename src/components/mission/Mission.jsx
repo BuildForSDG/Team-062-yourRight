@@ -1,4 +1,5 @@
 import React from 'react';
+import './Mission.scss';
 
 const Mission = () => {
   return (
@@ -20,7 +21,7 @@ const Mission = () => {
       <div className="mission-quote">
         <div className="border-line"></div>
         <span>
-          "Some 650 million girls and women around the world today have been married as children, and over 200 million
+          " Some 650 million girls and women around the world today have been married as children, and over 200 million
           have undergone FGM."
         </span>
         <a href="https://www.unicef.org/protection/harmful-practices" target="_blanck">

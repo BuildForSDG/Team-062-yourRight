@@ -1,0 +1,17 @@
+@import "../../../sass/variables";
+
+.nav-link {
+  align-items: center;
+  margin: 0.5rem 19rem 0 0;
+  a {
+    color: $white;
+    text-decoration: none;
+    margin: 0.6rem 0.7rem;
+    font-size: 1.1rem;
+    &:hover {
+      border-bottom: 5px solid $primary;
+      padding: 1.2rem 0;
+      border-radius: 0.1rem;
+    }
+  }
+}

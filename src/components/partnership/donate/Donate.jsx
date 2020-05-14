@@ -1,17 +1,20 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import donatepic from '../../images/donorpic.jpg';
+import './Donate.scss';
 
 const Donate = () => {
   return (
     <div className="donate">
-      <div className="donate-image">{/* <img src={donatepic} alt="donate here" /> */}</div>
+      <div className="donate-image"></div>
       <div className="donate-action">
         <h3>Take action</h3>
         <p>
-          Children need champions. Get involved, speak out, volunteer, or become a donor and give every child a fair
-          chance to succeed.
+          We are seeking for partnership and sponsorship to facilitate this goal.
+          <br />
+          <br />
+          Children need champions. Get involved, educate, partner with us, and give every child a fair chance to
+          maximize their potential and succeed.
         </p>
         <div className="join-btn">
           <Button variant="outlined" color="inherit">

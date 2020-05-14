@@ -1,9 +1,10 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import slideImage from '../../images/YourRight.png';
-import { responsive } from '../utils/MediaQuery';
-import { CustomButtons } from '../utils/CustomButtons';
+import slideImage from '../../../images/YourRight.png';
+import { responsive } from '../../utils/MediaQuery';
+import { CustomButtons } from '../../utils/CustomButtons';
+import './Partner.scss';
 
 const Partners = () => {
   return (

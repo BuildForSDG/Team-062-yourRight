@@ -1,19 +1,15 @@
 import React from 'react';
 import logoImage from '../../../images/justlogo.svg';
 import { Link } from 'react-router-dom';
+import './Logo.scss';
 
 const Logo = () => {
   return (
     <Link to="/">
-      <img height="50" src={logoImage} alt="your Right" />
-      <span
-        style={{
-          fontSize: '2rem',
-          color: '#fff'
-        }}
-      >
-        YourRight
-      </span>
+      <div className="logo">
+        <img height="50" src={logoImage} alt="your Right" />
+        <span>YourRight</span>
+      </div>
     </Link>
   );
 };

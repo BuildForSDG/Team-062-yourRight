@@ -1,31 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logonew.svg';
+import gender from '../../images/gender.svg';
+import education from '../../images/education.svg';
+import policy from '../../images/policy.svg';
+import protection from '../../images/give.svg';
+import './About.scss';
 
 const About = () => {
   return (
     <div className="about">
-      <h3>Your Right's Work</h3>
+      <h3>Our Concern</h3>
       <span>
-        UNICEF works in over 190 countries and territories to save children's lives, <br /> to defend their rights, and
-        to help them fulfil their potential, from early childhood through adolescence. <br /> And we never give up.
+        YourRight's works is basically to save children's lives and <br /> to defend their rights from early childhood
+        through adolescence. <br /> This is what we our goal .
       </span>
       <div className="about-grid">
         <div className="about-items">
-          <img src={logo} alt="scksjdkcj" />
-          <Link to="/">children proteect</Link>
+          <img src={gender} alt="what we do" />
+          <Link to="/">Gender</Link>
         </div>
         <div className="about-items">
-          <img src={logo} alt="scksjdkcj" />
-          <Link to="/">children proteect</Link>
+          <img src={education} alt="what we do" />
+          <Link to="/">Education</Link>
         </div>
         <div className="about-items">
-          <img src={logo} alt="scksjdkcj" />
-          <Link to="/">children proteect</Link>
+          <img src={policy} alt="what we do" />
+          <Link to="/">Social Policies</Link>
         </div>
         <div className="about-items">
-          <img src={logo} alt="scksjdkcj" />
-          <Link to="/">children proteect</Link>
+          <img src={protection} alt="what we do" />
+          <Link to="/">Female Protection</Link>
         </div>
       </div>
     </div>

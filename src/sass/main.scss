@@ -1,8 +1,6 @@
 @import "./utils";
 @import "./variables";
 @import "./mixins";
-@import "./media";
-@import url("https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@1&display=swap");
 
 * {
   margin: 0;
@@ -10,7 +8,6 @@
 }
 
 body {
-  // font-family: "Sorts Mill Goudy", serif;
   line-height: 1.7;
   font-size: 1rem;
 }
@@ -18,172 +15,4 @@ body {
 h3 {
   font-size: 2.2rem;
   color: $heading-color;
-}
-.nav-link {
-  align-items: center;
-  margin: 0.5rem 19rem 0 0;
-  a {
-    color: $white;
-    text-decoration: none;
-    margin: 0.6rem 0.7rem;
-    font-size: 1.1rem;
-    font-weight: 900;
-    &:hover {
-      border-bottom: 4px solid $primary;
-      padding: 1.3rem 0;
-    }
-  }
-}
-
-.content {
-  @include setBackgroundImages("../images/unicef.jpg");
-  height: 25rem;
-  background-attachment: fixed;
-  @include centerItems;
-  color: $white;
-  margin-bottom: -0.6rem;
-  text-shadow: 3px 2px 3px #ccc;
-  &-button {
-    display: flex;
-    & > button {
-      margin: 0.7rem 0.9rem;
-    }
-  }
-}
-
-.mission {
-  margin: 1rem auto;
-  @include centerItems;
-  width: 80%;
-  &-quote {
-    span {
-      font-family: "Sorts Mill Goudy", serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-    }
-    a {
-      color: $primary;
-      font-weight: 600;
-      margin: 1rem;
-    }
-  }
-}
-
-.about {
-  text-align: center;
-  background: $light;
-  h3,
-  p {
-    margin: 0.5rem;
-    padding: 0.3rem;
-  }
-  &-items {
-    margin: 1.6rem 0.5rem;
-    a {
-      display: block;
-    }
-  }
-}
-
-.partners {
-  position: relative;
-  h3 {
-    text-align: left;
-    margin: 1rem;
-  }
-}
-
-.donate {
-  &-image {
-    @include setBackgroundImages("../images/gender.jpg");
-    height: 20rem;
-  }
-  &-action {
-    color: $white;
-    background: $primary;
-    padding: 0.5rem;
-    padding: 3rem 0.7rem;
-    h3 {
-      padding: 0.7rem 0;
-    }
-    p {
-      margin: 0.6rem 0;
-    }
-  }
-  .join-btn {
-    color: $primary;
-    background: $white;
-    display: inline-block;
-    margin: 1rem 0;
-  }
-}
-
-.footer {
-  background-color: $footer-black;
-  color: $white;
-  padding: 1rem 0.3rem;
-  margin: -1rem 0;
-  &-grid {
-    @include centerItems;
-    p,
-    ul {
-      margin: 0.5rem;
-    }
-    p span {
-      color: $primary;
-    }
-  }
-}
-
-.footer-grid ul a {
-  margin: 0.4rem 0.7rem;
-  color: $white;
-}
-
-.contact {
-  background-color: $bg-footer;
-  text-align: center;
-  color: $footer-text;
-  ul {
-    margin: 0.5rem;
-  }
-  &-grid {
-    padding: 0 0.7rem;
-  }
-  &-address {
-    margin: 1rem 0;
-    ul li {
-      margin: 1rem 0;
-      text-align: left;
-    }
-    &-socials {
-      font-size: 0.5rem;
-      padding: 0.5rem 0;
-      margin: 0.3rem 0 0 0;
-      a {
-        color: $white;
-        margin: 0 0.4rem;
-        &:hover {
-          color: $primary;
-        }
-      }
-    }
-  }
-  &-services {
-    margin: 1rem 0;
-  }
-  ul li a {
-    text-decoration: none;
-    margin: 0.3rem;
-    display: block;
-    color: inherit;
-  }
-  .description {
-    img,
-    p {
-      margin: 0.6rem 0;
-      padding: 0.3rem;
-      text-align: left;
-    }
-  }
 }

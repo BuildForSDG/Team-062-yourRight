@@ -1,0 +1,75 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+@import "../../sass/utils";
+
+.contact {
+  background-color: $bg-footer;
+  text-align: center;
+  color: $footer-text;
+  h5 {
+    font-weight: 900;
+  }
+  ul {
+    margin: 0.5rem;
+  }
+  &-grid {
+    padding: 0 0.7rem;
+  }
+  &-address {
+    margin: 1rem 0;
+    ul li {
+      margin: 1rem 0;
+      text-align: left;
+    }
+    &-socials {
+      font-size: 0.5rem;
+      padding: 0.5rem 0;
+      margin: 0.3rem 0 0 0;
+      a {
+        color: $white;
+        margin: 0 0.4rem;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+  &-services {
+    margin: 1rem 0;
+  }
+  ul li a {
+    text-decoration: none;
+    margin: 0.3rem;
+    display: block;
+    color: inherit;
+  }
+  .description {
+    img {
+      margin: 0.4rem 0 -1rem 0;
+    }
+    p {
+      padding: 0 0.6rem;
+      text-align: left;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .contact {
+    text-align: left;
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .contact {
+    text-align: left;
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
