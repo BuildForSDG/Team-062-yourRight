@@ -4,13 +4,20 @@
 .about {
   text-align: center;
   background: $light;
-  h3,
+
+  h3 {
+    margin: 0.5rem;
+    padding: 0.3rem;
+  }
+
   p {
     margin: 0.5rem;
     padding: 0.3rem;
   }
+
   &-items {
     margin: 1.6rem 0.5rem;
+
     a {
       display: block;
       color: #3f51b5;
@@ -22,10 +29,15 @@
 
 @media (min-width: 800px) {
   .about {
-    @include centerItems;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
     &-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       & > div {
         margin: 1rem 3rem;
       }

@@ -3,11 +3,19 @@
 @import "../../sass/utils";
 
 .content {
-  @include setBackgroundImages("../images/unicef.jpg");
-  height: 25rem;
+  background: url("../../images/unicef.jpg");
+  background-size: cover;
+  background-position: center;
+  background-position: no-repeat;
   background-attachment: fixed;
-  @include centerItems;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   color: $white;
+
+  height: 25rem;
+
   h1 {
     margin: -3rem 0 0 0 0;
     letter-spacing: 0.2rem;
@@ -15,6 +23,7 @@
     font-size: 2rem;
     text-shadow: 1px 1px 1px #f4f4f4;
   }
+
   p {
     margin: 0.4rem;
     padding: 0.4rem;
@@ -22,6 +31,7 @@
 
   &-button {
     display: flex;
+
     & > button {
       margin: 0.7rem 0.9rem;
     }

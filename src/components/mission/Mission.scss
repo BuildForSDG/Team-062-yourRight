@@ -4,14 +4,20 @@
 
 .mission {
   margin: 1rem auto;
-  @include centerItems;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
   width: 80%;
+
   &-quote {
     span {
       font-family: "Sorts Mill Goudy", serif;
       font-size: 1.4rem;
       font-weight: 800;
     }
+
     a {
       color: $primary;
       font-weight: 600;
@@ -23,6 +29,7 @@
 @media (min-width: 1000px) {
   .mission {
     width: 50% !important;
+
     &-quote {
       span {
         font-size: 2.1rem !important;

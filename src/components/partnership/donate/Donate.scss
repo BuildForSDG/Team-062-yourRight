@@ -3,11 +3,17 @@
 
 .donate {
   padding: 1rem 0;
+  margin: 1rem 0;
+
   &-image {
-    @include setBackgroundImages("../images/gender.jpg");
+    background: url("../../../images/gender.jpg");
+    background-size: cover;
+    background-position: center;
+    background-position: no-repeat;
+
     height: 23rem;
   }
-  margin: 1rem 0;
+
   &-action {
     color: $white;
     background: $primary;
@@ -17,10 +23,12 @@
       padding: 0.7rem 0;
       color: $white;
     }
+
     p {
       margin: 0.6rem 0;
     }
   }
+
   .join-btn {
     color: $primary;
     background: $white;
@@ -33,6 +41,7 @@
   .donate {
     display: grid;
     grid-template-columns: 3fr 2fr;
+
     &-image {
       img {
         width: 100%;
