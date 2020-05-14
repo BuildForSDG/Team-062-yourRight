@@ -17,14 +17,16 @@ We are taking up this goal becuase according to [unicef](https://www.unicef.org/
 Our goal is to ensure that through this platform every child is protected from violence such as genital mutilation and forced marriges in both humanitarian and development settings.
 
 1. To develop a platform where reported cases will be treated with immediate effect human right organizations.
+
 2. Develop and support implementation of appropriate laws and policies.
+
 3. Increase global knowledge of the problem and political commitment to end child marriage and FGM.
 
 ## Usage
 
-- As a Case Reporter: You can partake in this platform by opening an account with us login and report a case.
+1. As a Case Reporter: You can partake in this platform by opening an account with us login and report a case.
 
-- As a partnering Organization: You have to register indicating your interest to support this goal and you become either a sponsor or legal practitioner who takes up reported cases into action.
+2. As a partnering Organization: You have to register indicating your interest to support this goal and you become either a sponsor or legal practitioner who takes up reported cases into action.
 
 ## Setup
 
