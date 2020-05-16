@@ -1,9 +1,0 @@
-.backgroundProps {
-  background-size: contain;
-  height: 100vh;
-  background-repeat: no-repeat;
-}
-
-.dashboard {
-  background-image: url('./svg/undraw_onboarding_o8mv.svg');
-}

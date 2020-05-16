@@ -1,18 +1,17 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Dashboard from './layouts/Dashboard'
-import './App.css';
+import Dashboard from './layouts/UserDashBoard';
 
 function App() {
   return (
-    <div className="">
+    <>
       <Switch>
-        <Route path='/dashboard' >
+        <Route path="/dashboard">
           <Dashboard />
         </Route>
-        <Route path='/' ></Route>
+        <Route path="/" />
       </Switch>
-    </div>
+    </>
   );
 }
 
