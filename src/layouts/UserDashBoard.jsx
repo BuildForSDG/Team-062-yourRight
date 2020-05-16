@@ -11,8 +11,6 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-  },
-  background: {
     backgroundImage: `url(${dashboardImg})`,
     backgroundSize: 'contain',
     height: '100vh',
@@ -20,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     width: '50%',
+  },
+  title: {
+    flexGrow: 1,
   },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
@@ -88,32 +89,33 @@ export default function () {
   };
 
   return (
-    <div className={classes.background}>
-      <div className={classes.root}>
-        <CssBaseline />
-        <Header
-          appBarClass={clsx(classes.appBar, {
-            [classes.appBarShift]: open,
-          })}
-          openDrawer={handleDrawerOpen}
-          iconButtonClass={clsx(classes.menuButton, open && classes.hide)}
-        />
-        <SideBar
-          drawerClass={classes.drawer}
-          drawerOpen={open}
-          drawerHeaderClass={classes.drawerHeader}
-          drawerPaperClass={classes.drawerPaper}
-          closeDrawer={handleDrawerClose}
-          drawerTheme={theme}
-        />
-        <main
-          className={clsx(classes.content, {
-            [classes.contentShift]: open,
-          })}
-        >
-          <div className={classes.drawerHeader} />
-        </main>
-      </div>
+    <div className={classes.root}>
+      <CssBaseline />
+      <Header
+        appBarClass={clsx(classes.appBar, {
+          [classes.appBarShift]: open,
+        })}
+        openDrawer={handleDrawerOpen}
+        iconButtonClass={clsx(classes.menuButton, open && classes.hide)}
+        typographyClass={classes.title}
+      />
+      <SideBar
+        drawerClass={classes.drawer}
+        drawerOpen={open}
+        drawerHeaderClass={classes.drawerHeader}
+        drawerPaperClass={{
+          paper: classes.drawerPaper,
+        }}
+        closeDrawer={handleDrawerClose}
+        drawerTheme={theme}
+      />
+      <main
+        className={clsx(classes.content, {
+          [classes.contentShift]: open,
+        })}
+      >
+        <div className={classes.drawerHeader} />
+      </main>
     </div>
   );
 }
