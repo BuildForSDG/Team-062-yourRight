@@ -1,44 +1,68 @@
 import React from 'react';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
-  AppBar, Toolbar, Typography, IconButton,
+  AppBar, Toolbar, IconButton, Typography,
 } from '@material-ui/core';
-import { Menu, Create } from '@material-ui/icons';
+import { Menu } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core/styles';
 
-function Header({
-  appBarClass, openDrawer, iconButtonClass, typographyClass,
-}) {
+const drawerWidth = 240;
+
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  hide: {
+    display: 'none',
+  },
+}));
+
+function Header({ drawerOpener, openState }) {
+  const classes = useStyles();
+
   return (
     <AppBar
       position="fixed"
-      className={appBarClass}
+      className={clsx(classes.appBar, {
+        [classes.appBarShift]: openState,
+      })}
     >
       <Toolbar>
         <IconButton
           color="inherit"
           aria-label="open drawer"
-          onClick={openDrawer}
+          onClick={drawerOpener}
           edge="start"
-          className={iconButtonClass}
+          className={clsx(classes.menuButton, openState && classes.hide)}
         >
           <Menu />
         </IconButton>
-        <Typography className={typographyClass} variant="h6" noWrap>
-          Your Right
+        <Typography variant="h6" noWrap>
+          Persistent drawer
         </Typography>
-        <IconButton color="inherit">
-          <Create />
-        </IconButton>
       </Toolbar>
     </AppBar>
   );
 }
 
 Header.propTypes = {
-  appBarClass: PropTypes.isRequired,
-  openDrawer: PropTypes.isRequired,
-  iconButtonClass: PropTypes.isRequired,
-  typographyClass: PropTypes.isRequired,
+  drawerOpener: PropTypes.isRequired,
+  openState: PropTypes.isRequired,
 };
 
 export default Header;

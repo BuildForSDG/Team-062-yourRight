@@ -1,121 +1,34 @@
 import React from 'react';
-import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { CssBaseline } from '@material-ui/core';
-import dashboardImg from '../svg/undraw_onboarding_o8mv.svg';
+import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from '../templates/Appbar';
-import SideBar from '../templates/Drawer';
+import Sidebar from '../templates/Drawer';
+import Content from '../templates/Main';
 
-const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
-    backgroundImage: `url(${dashboardImg})`,
-    backgroundSize: 'contain',
-    height: '100vh',
-    backgroundRepeat: 'no-repeat',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    width: '50%',
-  },
-  title: {
-    flexGrow: 1,
-  },
-  appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  hide: {
-    display: 'none',
-  },
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
-  },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
   },
 }));
 
 export default function () {
   const classes = useStyles();
-  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
 
   const handleDrawerClose = () => {
     setOpen(false);
   };
 
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Header
-        appBarClass={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-        openDrawer={handleDrawerOpen}
-        iconButtonClass={clsx(classes.menuButton, open && classes.hide)}
-        typographyClass={classes.title}
-      />
-      <SideBar
-        drawerClass={classes.drawer}
-        drawerOpen={open}
-        drawerHeaderClass={classes.drawerHeader}
-        drawerPaperClass={{
-          paper: classes.drawerPaper,
-        }}
-        closeDrawer={handleDrawerClose}
-        drawerTheme={theme}
-      />
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      >
-        <div className={classes.drawerHeader} />
-      </main>
+      <Header openState={open} drawerOpener={handleDrawerOpen} />
+      <Sidebar closeState={open} drawerCloser={handleDrawerClose} />
+      <Content drawerState={open} />
     </div>
   );
 }

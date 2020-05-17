@@ -1,52 +1,86 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
-  Drawer, List, Divider, IconButton,
-  ListItem, ListItemIcon, ListItemText,
+  Drawer, IconButton, Divider, List,
+  ListItem, ListItemText, ListItemIcon,
 } from '@material-ui/core';
 import {
-  ChevronLeft, ChevronRight, Home, AccountCircle,
+  ChevronLeft, ChevronRight, Mail, Inbox,
 } from '@material-ui/icons';
 
-function Sidebar({
-  drawerClass, drawerOpen, drawerPaperClass,
-  closeDrawer, drawerHeaderClass, drawerTheme,
-}) {
+
+const drawerWidth = 240;
+
+const useStyles = makeStyles((theme) => ({
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  drawerHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: theme.spacing(0, 1),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+    justifyContent: 'flex-end',
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: -drawerWidth,
+  },
+  contentShift: {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
+  },
+}));
+
+function Sidebar({ closeState, drawerCloser }) {
+  const classes = useStyles();
+  const theme = useTheme();
   return (
     <Drawer
-      className={drawerClass}
+      className={classes.drawer}
       variant="persistent"
       anchor="left"
-      open={drawerOpen}
-      classes={drawerPaperClass}
+      open={closeState}
+      classes={{
+        paper: classes.drawerPaper,
+      }}
     >
-      <div className={drawerHeaderClass}>
-        <IconButton onClick={closeDrawer}>
-          {drawerTheme.direction === 'ltr' ? <ChevronLeft /> : <ChevronRight />}
+      <div className={classes.drawerHeader}>
+        <IconButton onClick={drawerCloser}>
+          {theme.direction === 'ltr' ? <ChevronLeft /> : <ChevronRight />}
         </IconButton>
       </div>
       <Divider />
       <List>
-        {[{ text: 'Home', icon: <Home /> },
-          { text: 'Profile', icon: <AccountCircle /> }]
-          .map(({ text, icon }) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{icon}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>{index % 2 === 0 ? <Inbox /> : <Mail />}</ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
       </List>
+      <Divider />
     </Drawer>
   );
 }
 
 Sidebar.propTypes = {
-  drawerClass: PropTypes.isRequired,
-  drawerOpen: PropTypes.isRequired,
-  drawerPaperClass: PropTypes.isRequired,
-  closeDrawer: PropTypes.isRequired,
-  drawerHeaderClass: PropTypes.isRequired,
-  drawerTheme: PropTypes.isRequired,
+  closeState: PropTypes.isRequired,
+  drawerCloser: PropTypes.isRequired,
 };
 
 export default Sidebar;
