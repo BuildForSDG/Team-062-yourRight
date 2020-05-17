@@ -7,7 +7,7 @@ import {
 import { Menu } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
-const drawerWidth = 240;
+const drawerWidth = 150;
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -53,7 +53,7 @@ function Header({ drawerOpener, openState }) {
           <Menu />
         </IconButton>
         <Typography variant="h6" noWrap>
-          Persistent drawer
+          Your Right
         </Typography>
       </Toolbar>
     </AppBar>

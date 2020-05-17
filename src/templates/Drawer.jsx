@@ -6,11 +6,11 @@ import {
   ListItem, ListItemText, ListItemIcon,
 } from '@material-ui/core';
 import {
-  ChevronLeft, ChevronRight, Mail, Inbox,
+  ChevronLeft, ChevronRight, AccountCircle, Home,
 } from '@material-ui/icons';
 
 
-const drawerWidth = 240;
+const drawerWidth = 150;
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -66,12 +66,13 @@ function Sidebar({ closeState, drawerCloser }) {
       </div>
       <Divider />
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <Inbox /> : <Mail />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        {[{ text: 'Home', icon: <Home /> }, { text: 'Profile', icon: <AccountCircle /> }]
+          .map(({ text, icon }) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{icon}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
       </List>
       <Divider />
     </Drawer>
