@@ -61,8 +61,8 @@ function Header({ drawerOpener, openState }) {
 }
 
 Header.propTypes = {
-  drawerOpener: PropTypes.isRequired,
-  openState: PropTypes.isRequired,
+  drawerOpener: PropTypes.func.isRequired,
+  openState: PropTypes.bool.isRequired,
 };
 
 export default Header;

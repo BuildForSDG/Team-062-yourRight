@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { CssBaseline } from '@material-ui/core';
 import Header from '../templates/Appbar';
 import Sidebar from '../templates/Drawer';
 import Content from '../templates/Main';
@@ -10,6 +10,7 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
   },
 }));
+
 
 export default function () {
   const classes = useStyles();

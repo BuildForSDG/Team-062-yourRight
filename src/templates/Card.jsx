@@ -6,7 +6,7 @@ import {
 
 const useStyles = makeStyles({
   root: {
-    width: '95vw',
+    width: '92.9vw',
   },
   bullet: {
     display: 'inline-block',
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function SimpleCard() {
+export default function () {
   const classes = useStyles();
 
   return (

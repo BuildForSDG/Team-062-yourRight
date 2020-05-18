@@ -80,8 +80,8 @@ function Sidebar({ closeState, drawerCloser }) {
 }
 
 Sidebar.propTypes = {
-  closeState: PropTypes.isRequired,
-  drawerCloser: PropTypes.isRequired,
+  closeState: PropTypes.bool.isRequired,
+  drawerCloser: PropTypes.func.isRequired,
 };
 
 export default Sidebar;
