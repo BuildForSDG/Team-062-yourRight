@@ -7,6 +7,7 @@ import {
 const useStyles = makeStyles({
   root: {
     width: '92.9vw',
+    opacity: 0.9,
   },
   bullet: {
     display: 'inline-block',

@@ -4,12 +4,16 @@ import PropTypes from 'prop-types';
 import {
   AppBar, Toolbar, IconButton, Typography,
 } from '@material-ui/core';
-import { Menu } from '@material-ui/icons';
+import { Menu, Create } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
 const drawerWidth = 150;
 
 const useStyles = makeStyles((theme) => ({
+  title: {
+    flexGrow: 1,
+  },
+
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -52,9 +56,12 @@ function Header({ drawerOpener, openState }) {
         >
           <Menu />
         </IconButton>
-        <Typography variant="h6" noWrap>
+        <Typography className={classes.title} variant="h6" noWrap>
           Your Right
         </Typography>
+        <IconButton color="inherit">
+          <Create />
+        </IconButton>
       </Toolbar>
     </AppBar>
   );
