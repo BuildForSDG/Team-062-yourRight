@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
@@ -86,7 +87,7 @@ ScrollTop.defaultProps = {
   window: undefined,
 };
 
-function Content({ drawerState }, props) {
+function Content({ drawerState }, { children, window }) {
   const classes = useStyles();
   return (
     <main
@@ -105,7 +106,7 @@ function Content({ drawerState }, props) {
             </ListItem>
           </List>
         ))}
-      <ScrollTop {...props}>
+      <ScrollTop children={children} window={window}>
         <Fab color="secondary" size="small" aria-label="scroll back to top">
           <KeyboardArrowUp />
         </Fab>
