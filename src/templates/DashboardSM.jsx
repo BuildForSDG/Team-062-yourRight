@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
   Drawer, CssBaseline, AppBar, Toolbar,
-  Divider, List, IconButton,
+  Divider, List, IconButton, Typography,
   ListItemIcon, ListItemText, ListItem, Fab,
 } from '@material-ui/core';
 import {
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   hide: {
     display: 'none',
@@ -110,7 +110,9 @@ function Dashboard({ content }) {
           >
             <Menu />
           </IconButton>
-          <div className={classes.headerSpace} />
+          <Typography className={classes.headerSpace}>
+            Your Right
+          </Typography>
           <IconButton edge="end" color="inherit">
             <Close />
           </IconButton>

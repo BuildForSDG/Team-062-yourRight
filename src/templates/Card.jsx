@@ -4,15 +4,15 @@ import {
   Card, CardActions, CardContent, Button, Typography,
 } from '@material-ui/core';
 
-function CardComponent({ classAttr }) {
+function CardComponent({ classAttr, title, body }) {
   return (
     <Card className={classAttr}>
       <CardContent>
         <Typography color="textSecondary" gutterBottom>
-          Report Title
+          {title}
         </Typography>
         <Typography variant="body2" component="p">
-          Report Body
+          {body}
         </Typography>
       </CardContent>
       <CardActions>
@@ -25,6 +25,13 @@ function CardComponent({ classAttr }) {
 
 CardComponent.propTypes = {
   classAttr: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  body: PropTypes.string,
+};
+
+CardComponent.defaultProps = {
+  title: 'Report Title',
+  body: 'Report Body',
 };
 
 export default CardComponent;

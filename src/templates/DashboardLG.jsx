@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Drawer, AppBar, CssBaseline, Typography,
-  Toolbar, List, ListItem, Fab, Zoom, IconButton,
+  Toolbar, List, ListItem, Fab, Zoom, Button,
   ListItemIcon, ListItemText, useScrollTrigger,
 } from '@material-ui/core';
 import {
   AccountCircle, Home, KeyboardArrowUp,
 } from '@material-ui/icons';
+import Modal from './Modal';
 
 const drawerWidth = 240;
 
@@ -39,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   headerSpace: {
     flexGrow: 1,
+    textAlign: 'center',
   },
 }));
 
@@ -100,17 +102,13 @@ function Dashboard({ content }, { children, window }) {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <IconButton color="inherit">
-            <Typography variant="h6">
-              Create report
-            </Typography>
-          </IconButton>
-          <div className={classes.headerSpace} />
-          <IconButton color="inherit">
-            <Typography variant="h6">
-              Logout
-            </Typography>
-          </IconButton>
+          <Modal text="Create Report" color="inherit" />
+          <Typography className={classes.headerSpace}>
+            Your Right
+          </Typography>
+          <Button color="inherit">
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer

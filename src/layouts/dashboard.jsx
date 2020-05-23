@@ -4,15 +4,21 @@ import {
   Hidden, withWidth, List, ListItem,
 } from '@material-ui/core';
 import MobileView from '../templates/DashboardSM';
-import DesktopView from '../templates/DashBoardLG';
+import DesktopView from '../templates/DashboardLG';
 import Card from '../templates/Card';
+import dashboardImg from '../svg/undraw_onboarding_o8mv.svg';
 
 const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
+    backgroundImage: `url(${dashboardImg})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'fit',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center',
+    height: '100%',
   },
   SMCard: {
-    minWidth: 280,
     width: '90vw',
     opacity: 0.9,
   },
@@ -44,14 +50,15 @@ function Dashboard() {
           />
         </Hidden>
         <Hidden only={['sm', 'xs', 'md']}>
-          <DesktopView content={[...new Array(7)]
-            .map((index) => (
-              <List>
-                <ListItem key={index}>
-                  <Card classAttr={classes.LGCard} button />
-                </ListItem>
-              </List>
-            ))}
+          <DesktopView
+            content={[...new Array(7)]
+              .map((index) => (
+                <List>
+                  <ListItem key={index}>
+                    <Card classAttr={classes.LGCard} button />
+                  </ListItem>
+                </List>
+              ))}
           />
         </Hidden>
       </div>
