@@ -1,23 +1,14 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 import {
   Card, CardActions, CardContent, Button, Typography,
 } from '@material-ui/core';
 
-const useStyles = makeStyles({
-  root: {
-    width: '92.9vw',
-    opacity: 0.9,
-  },
-});
-
-export default function () {
-  const classes = useStyles();
-
+function CardComponent({ classAttr }) {
   return (
-    <Card className={classes.root}>
+    <Card className={classAttr}>
       <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
+        <Typography color="textSecondary" gutterBottom>
           Report Title
         </Typography>
         <Typography variant="body2" component="p">
@@ -31,3 +22,9 @@ export default function () {
     </Card>
   );
 }
+
+CardComponent.propTypes = {
+  classAttr: PropTypes.string.isRequired,
+};
+
+export default CardComponent;
