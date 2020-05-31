@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function TransitionsModal({ text, color }) {
+function TransitionsModal({ text, color, childComponent }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -49,10 +49,7 @@ function TransitionsModal({ text, color }) {
         }}
       >
         <Fade in={open}>
-          <div className={classes.paper}>
-            <h2 id="transition-modal-title">Transition modal</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
-          </div>
+          { childComponent }
         </Fade>
       </Modal>
     </div>
@@ -62,6 +59,7 @@ function TransitionsModal({ text, color }) {
 TransitionsModal.propTypes = {
   text: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
+  childComponent: PropTypes.shape.isRequired,
 };
 
 export default TransitionsModal;

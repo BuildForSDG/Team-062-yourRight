@@ -11,6 +11,7 @@ import {
   AccountCircle, Home, KeyboardArrowUp,
 } from '@material-ui/icons';
 import Modal from './Modal';
+import CardComponent from './Card';
 
 const drawerWidth = 240;
 
@@ -42,19 +43,19 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     textAlign: 'center',
   },
-}));
-
-
-const scrollStyles = makeStyles((theme) => ({
-  root: {
+  scrollStyles: {
     position: 'fixed',
     bottom: theme.spacing(2),
     right: theme.spacing(2),
   },
+  card: {
+    width: '35vw',
+  },
 }));
 
+
 function ScrollTop({ children, window }) {
-  const classes = scrollStyles();
+  const classes = useStyles();
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
   // This is only being set here because the demo is in an iframe.
@@ -74,7 +75,7 @@ function ScrollTop({ children, window }) {
 
   return (
     <Zoom in={trigger}>
-      <div onClick={handleClick} role="presentation" className={classes.root}>
+      <div onClick={handleClick} role="presentation" className={classes.scrollStyles}>
         {children}
       </div>
     </Zoom>
@@ -102,7 +103,7 @@ function Dashboard({ content }, { children, window }) {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <Modal text="Create Report" color="inherit" />
+          <Modal childComponent={<CardComponent classAttr={classes.card} />} text="Create Report" color="inherit" />
           <Typography className={classes.headerSpace}>
             Your Right
           </Typography>
