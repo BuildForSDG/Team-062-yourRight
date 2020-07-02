@@ -1,0 +1,40 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+@import url("https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@1&display=swap");
+
+.mission {
+  margin: 1rem auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 80%;
+
+  &-quote {
+    span {
+      font-family: "Sorts Mill Goudy", serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    a {
+      color: $primary;
+      font-weight: 600;
+      margin: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .mission {
+    width: 50% !important;
+
+    &-quote {
+      span {
+        font-size: 2.1rem !important;
+        font-weight: 900;
+      }
+    }
+  }
+}

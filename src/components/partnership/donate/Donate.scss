@@ -1,0 +1,53 @@
+@import "../../../sass/mixins";
+@import "../../../sass/variables";
+
+.donate {
+  padding: 1rem 0;
+  margin: 1rem 0;
+
+  &-image {
+    background: url("../../../images/gender.jpg");
+    background-size: cover;
+    background-position: center;
+    background-position: no-repeat;
+
+    height: 23rem;
+  }
+
+  &-action {
+    color: $white;
+    background: $primary;
+    padding: 0 0.7rem;
+    height: 100%;
+
+    h3 {
+      padding: 0.7rem 0;
+      color: $white;
+    }
+
+    p {
+      margin: 0.6rem 0;
+    }
+  }
+
+  .join-btn {
+    color: $primary;
+    background: $white;
+    display: inline-block;
+    margin: 1rem 0;
+  }
+}
+
+@media (min-width: 800px) {
+  .donate {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+
+    &-image {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

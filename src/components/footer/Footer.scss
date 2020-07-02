@@ -1,0 +1,33 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.footer {
+  background-color: $footer-black;
+  color: $white;
+  padding: 0.2rem 0.3rem;
+  margin: -1rem 0;
+
+  &-grid {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin: 0.3rem;
+    }
+
+    ul {
+      margin: 0.3rem;
+    }
+
+    p span {
+      color: $primary;
+    }
+  }
+}
+
+.footer-grid ul a {
+  margin: 0.4rem 0.7rem;
+  color: $white;
+}
